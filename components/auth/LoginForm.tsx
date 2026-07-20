@@ -13,8 +13,8 @@ export function LoginForm({ next }: { next: string }) {
   return (
     <form action={formAction} className="space-y-1">
       <input type="hidden" name="next" value={next} />
-      <FieldWrap label="E-mail">
-        <TextInput type="email" name="email" required placeholder="voce@faxa.com.br" autoFocus />
+      <FieldWrap label="Usuário">
+        <TextInput type="text" name="username" required placeholder="seu.usuario" autoFocus autoCapitalize="none" />
       </FieldWrap>
       <FieldWrap label="Senha">
         <TextInput type="password" name="password" required placeholder="••••••••" />

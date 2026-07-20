@@ -10,5 +10,9 @@ export default async function AdminPage() {
 
   const clients = await listClients();
 
-  return <AdminShell initialClients={clients} adminName={user?.email ?? "equipe faxa"} />;
+  // O e-mail é sintético (usuario@painelfx.local, ver lib/actions/auth.ts) —
+  // mostramos só a parte do usuário, sem o domínio fake.
+  const adminName = user?.email?.split("@")[0] ?? "equipe faxa";
+
+  return <AdminShell initialClients={clients} adminName={adminName} />;
 }
