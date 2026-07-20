@@ -8,9 +8,9 @@ export interface LoginState {
 }
 
 // O Supabase Auth exige um e-mail internamente, mas a equipe faxa loga só com
-// usuário e senha — então convertemos "joao" em "joao@painelfx.local" por baixo.
+// usuário e senha — então convertemos "joao" em "joao@painel.com" por baixo.
 // Os usuários precisam ser cadastrados no Supabase já nesse formato de e-mail.
-const USERNAME_EMAIL_DOMAIN = "painelfx.local";
+const USERNAME_EMAIL_DOMAIN = "painel.com";
 
 function usernameToEmail(username: string): string {
   const normalized = username
