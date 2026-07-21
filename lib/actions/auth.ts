@@ -37,9 +37,7 @@ export async function login(_prevState: LoginState, formData: FormData): Promise
   });
 
   if (error) {
-    // TODO: trocar de volta pra mensagem genérica assim que o login estiver
-    // funcionando — isso aqui é só pra diagnosticar o erro real do Supabase.
-    return { error: `[debug] ${error.status ?? "?"} ${error.code ?? ""} ${error.message}` };
+    return { error: "Usuário ou senha inválidos." };
   }
 
   redirect(next.startsWith("/") ? next : "/admin");
