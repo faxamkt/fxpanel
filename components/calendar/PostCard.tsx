@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PostFormato, PostStatus, PostTipo } from "@/lib/types";
 import { STATUS_STYLES } from "@/lib/status";
 import { cn } from "@/lib/utils";
@@ -8,6 +9,7 @@ export interface PostCardSummary {
   tipo: PostTipo;
   formato: PostFormato;
   status: PostStatus;
+  link_imagem?: string | null;
 }
 
 export function PostCard({ post, onClick }: { post: PostCardSummary; onClick: () => void }) {
@@ -22,6 +24,11 @@ export function PostCard({ post, onClick }: { post: PostCardSummary; onClick: ()
         style.border
       )}
     >
+      {post.link_imagem && (
+        <div className="relative mb-1.5 h-14 w-full overflow-hidden rounded">
+          <Image src={post.link_imagem} alt="" fill sizes="200px" className="object-cover" />
+        </div>
+      )}
       <div className="mb-0.5 flex items-center gap-1 font-bold">{post.titulo}</div>
       <div className={cn("text-[10px]", post.status === "Publicado" ? "text-faxa-cinza-claro/70" : "text-faxa-cinza-3")}>
         {post.tipo} · {post.formato}

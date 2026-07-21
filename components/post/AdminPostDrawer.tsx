@@ -219,7 +219,7 @@ export function AdminPostDrawer({
       {isEdit && post && (
         <>
           <ApprovalSteps steps={steps} onToggle={handleToggleStep} />
-          <AssetLinksEditable value={assets} onChange={setAssets} />
+          <AssetLinksEditable value={assets} onChange={setAssets} postId={post.id} />
           <CommentsThread comments={comments} loading={isLoadingComments} onSubmit={handleAddComment} />
         </>
       )}
