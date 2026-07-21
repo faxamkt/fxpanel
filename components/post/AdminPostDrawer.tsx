@@ -53,7 +53,7 @@ function emptyForm(defaultDate: string | null): FormState {
     formato: "Estático",
     data_agendada: defaultDate ?? new Date().toISOString().slice(0, 10),
     briefing: "",
-    status: "Copy V4",
+    status: "Copy FX",
   };
 }
 

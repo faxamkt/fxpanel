@@ -8,13 +8,13 @@ interface StatusStyle {
 }
 
 export const STATUS_STYLES: Record<PostStatus, StatusStyle> = {
-  "Copy V4": {
+  "Copy FX": {
     card: "bg-faxa-copy-bg",
     border: "border-l-faxa-amarelo",
     label: "text-faxa-amarelo-escuro",
     legendDot: "bg-faxa-amarelo",
   },
-  "Layout V4": {
+  "Layout FX": {
     card: "bg-faxa-layout-bg",
     border: "border-l-faxa-cinza-2",
     label: "text-faxa-cinza-2",
@@ -53,8 +53,8 @@ export const STATUS_STYLES: Record<PostStatus, StatusStyle> = {
 };
 
 export const STATUS_LEGEND: { status: PostStatus; label: string }[] = [
-  { status: "Copy V4", label: "Copy V4" },
-  { status: "Layout V4", label: "Layout V4" },
+  { status: "Copy FX", label: "Copy FX" },
+  { status: "Layout FX", label: "Layout FX" },
   { status: "Falta material", label: "Falta material / Ajustar" },
   { status: "Em aprovação Cliente", label: "Em aprovação Cliente" },
   { status: "Aprovado para publicação", label: "Aprovado" },

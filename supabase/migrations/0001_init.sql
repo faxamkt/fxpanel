@@ -10,8 +10,8 @@ create extension if not exists "pgcrypto";
 -- ========== TIPOS ==========
 
 create type post_status as enum (
-  'Copy V4',
-  'Layout V4',
+  'Copy FX',
+  'Layout FX',
   'Falta material',
   'Em aprovação Cliente',
   'Ajustar',
@@ -60,7 +60,7 @@ create table posts (
   formato post_formato not null default 'Estático',
   data_agendada date not null,
   briefing text not null default '',
-  status post_status not null default 'Copy V4',
+  status post_status not null default 'Copy FX',
   link_copy text,
   link_imagem text,
   link_video text,

@@ -1,6 +1,6 @@
 export const POST_STATUS_VALUES = [
-  "Copy V4",
-  "Layout V4",
+  "Copy FX",
+  "Layout FX",
   "Falta material",
   "Em aprovação Cliente",
   "Ajustar",
