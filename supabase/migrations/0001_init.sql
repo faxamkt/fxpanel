@@ -279,15 +279,3 @@ grant execute on function rpc_client_posts(uuid, int, int) to anon, authenticate
 grant execute on function rpc_client_post_comments(uuid, uuid) to anon, authenticated;
 grant execute on function rpc_client_approve_post(uuid, uuid) to anon, authenticated;
 grant execute on function rpc_client_request_adjustment(uuid, uuid, text) to anon, authenticated;
-
--- ========== SEED (clientes de exemplo, iguais ao protótipo) ==========
-
-insert into clients (nome, slug) values
-  ('CPAD | Editora', 'cpad-editora'),
-  ('CPAD | Distribuidora', 'cpad-distribuidora'),
-  ('Loja da Bel', 'loja-da-bel'),
-  ('Master Plastic', 'master-plastic'),
-  ('Odorite', 'odorite'),
-  ('Prime Ingredientes', 'prime-ingredientes'),
-  ('Protect Car', 'protect-car'),
-  ('QV Benefícios', 'qv-beneficios');

@@ -11,7 +11,7 @@ Sistema web para a agência faxa gerenciar e compartilhar grades de postagens (c
 ## Configurar o Supabase
 
 1. Crie um **projeto novo e isolado** no Supabase (não reaproveite o projeto de outro produto da agência).
-2. No SQL Editor do projeto, rode o conteúdo de [`supabase/migrations/0001_init.sql`](supabase/migrations/0001_init.sql). Isso cria as tabelas, os triggers, as policies de RLS, as funções RPC do portal do cliente e insere os 8 clientes de exemplo do protótipo.
+2. No SQL Editor do projeto, rode o conteúdo de [`supabase/migrations/0001_init.sql`](supabase/migrations/0001_init.sql) e depois de [`supabase/migrations/0002_storage.sql`](supabase/migrations/0002_storage.sql), nessa ordem. Isso cria as tabelas, os triggers, as policies de RLS, as funções RPC do portal do cliente e o bucket de storage dos assets de post. Os clientes de verdade são cadastrados depois, direto pela tela `/admin` (botão "+ Novo cliente").
 3. Em **Authentication → Users**, crie manualmente os usuários da equipe faxa (e-mail/senha) que poderão acessar `/admin`. Não existe tela de cadastro público — o acesso é restrito a quem for criado ali.
 4. Em **Project Settings → API**, copie a `Project URL` e a `anon public key`.
 
