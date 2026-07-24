@@ -44,6 +44,12 @@ export const STATUS_STYLES: Record<PostStatus, StatusStyle> = {
     label: "text-faxa-sucesso",
     legendDot: "bg-faxa-sucesso",
   },
+  Agendado: {
+    card: "bg-faxa-cinza-bg",
+    border: "border-l-faxa-cinza-1",
+    label: "text-faxa-cinza-1",
+    legendDot: "bg-faxa-cinza-1",
+  },
   Publicado: {
     card: "bg-faxa-preto text-faxa-branco",
     border: "border-l-faxa-amarelo",
@@ -58,5 +64,6 @@ export const STATUS_LEGEND: { status: PostStatus; label: string }[] = [
   { status: "Falta material", label: "Falta material / Ajustar" },
   { status: "Em aprovação Cliente", label: "Em aprovação Cliente" },
   { status: "Aprovado para publicação", label: "Aprovado" },
+  { status: "Agendado", label: "Agendado" },
   { status: "Publicado", label: "Publicado" },
 ];

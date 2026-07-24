@@ -16,6 +16,7 @@ create type post_status as enum (
   'Em aprovação Cliente',
   'Ajustar',
   'Aprovado para publicação',
+  'Agendado',
   'Publicado'
 );
 
@@ -28,7 +29,8 @@ create type post_tipo as enum (
 create type post_formato as enum (
   'Estático',
   'Carrossel',
-  'Reels'
+  'Reels',
+  'Reunião'
 );
 
 create type approval_step_tipo as enum (

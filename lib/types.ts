@@ -5,6 +5,7 @@ export const POST_STATUS_VALUES = [
   "Em aprovação Cliente",
   "Ajustar",
   "Aprovado para publicação",
+  "Agendado",
   "Publicado",
 ] as const;
 
@@ -13,7 +14,7 @@ export type PostStatus = (typeof POST_STATUS_VALUES)[number];
 export const POST_TIPO_VALUES = ["Social media", "Vídeo", "E-mail"] as const;
 export type PostTipo = (typeof POST_TIPO_VALUES)[number];
 
-export const POST_FORMATO_VALUES = ["Estático", "Carrossel", "Reels"] as const;
+export const POST_FORMATO_VALUES = ["Estático", "Carrossel", "Reels", "Reunião"] as const;
 export type PostFormato = (typeof POST_FORMATO_VALUES)[number];
 
 export const APPROVAL_STEP_TIPO_VALUES = ["Temática", "Texto", "Arte"] as const;
