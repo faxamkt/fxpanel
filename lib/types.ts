@@ -89,6 +89,10 @@ export interface Comment {
 }
 
 export interface NewPostInput {
+  link_copy?: string | null;
+  link_imagem?: string | null;
+  link_video?: string | null;
+  link_drive?: string | null;
   client_id: string;
   titulo: string;
   tipo: PostTipo;

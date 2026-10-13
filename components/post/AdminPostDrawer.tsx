@@ -90,6 +90,7 @@ export function AdminPostDrawer({
   const [comments, setComments] = useState<Comment[]>([]);
   const [isPending, startTransition] = useTransition();
   const [isLoadingComments, startCommentsTransition] = useTransition();
+  const [isUploading, setIsUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   // O AdminShell troca a `key` deste componente a cada post/dia diferente,
@@ -127,7 +128,7 @@ export function AdminPostDrawer({
         if (isEdit && post) {
           await updatePost({ id: post.id, ...form, ...assets });
         } else {
-          await createPost({ client_id: clientId, ...form });
+          await createPost({ client_id: clientId, ...form, ...assets });
         }
         onSaved();
       } catch (e) {
@@ -153,11 +154,11 @@ export function AdminPostDrawer({
       footer={
         <div className="space-y-2">
           {error && <p className="text-xs text-faxa-alerta">{error}</p>}
-          <Button variant="dark" className="w-full justify-center" onClick={handleSave} disabled={isPending}>
+          <Button variant="dark" className="w-full justify-center" onClick={handleSave} disabled={isPending || isUploading}>
             Salvar Demanda
           </Button>
           {isEdit && (
-            <Button variant="ghost" className="w-full justify-center" onClick={handleDelete} disabled={isPending}>
+            <Button variant="ghost" className="w-full justify-center" onClick={handleDelete} disabled={isPending || isUploading}>
               Excluir demanda
             </Button>
           )}
@@ -216,10 +217,11 @@ export function AdminPostDrawer({
         </Select>
       </FieldWrap>
 
+      <AssetLinksEditable value={assets} onChange={setAssets} postId={post?.id} onUploadingChange={setIsUploading} />
+
       {isEdit && post && (
         <>
           <ApprovalSteps steps={steps} onToggle={handleToggleStep} />
-          <AssetLinksEditable value={assets} onChange={setAssets} postId={post.id} />
           <CommentsThread comments={comments} loading={isLoadingComments} onSubmit={handleAddComment} />
         </>
       )}
