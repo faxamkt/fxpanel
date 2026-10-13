@@ -25,7 +25,7 @@ export function CalendarGrid({ year, month, posts, isAdmin, onAddDay, onPostClic
   }
 
   return (
-    <div className="overflow-x-auto">
+    <div className="mx-auto max-w-[1400px] overflow-x-auto">
       <div className="grid min-w-[720px] grid-cols-7 overflow-hidden rounded-[10px] border border-faxa-cinza-claro bg-faxa-branco">
         {WEEKDAY_LABELS.map((label) => (
           <div
@@ -46,7 +46,7 @@ export function CalendarGrid({ year, month, posts, isAdmin, onAddDay, onPostClic
             <div
               key={dateKey}
               className={cn(
-                "group relative min-h-[118px] border-r border-b border-faxa-cinza-claro/70 p-2 last:border-r-0",
+                "group relative aspect-square min-h-[118px] min-w-0 border-r border-b border-faxa-cinza-claro/70 p-2 last:border-r-0",
                 inMonth ? "bg-faxa-branco" : "bg-faxa-cinza-bg/60 text-faxa-cinza-3/60"
               )}
             >

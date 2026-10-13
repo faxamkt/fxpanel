@@ -25,11 +25,11 @@ export function PostCard({ post, onClick }: { post: PostCardSummary; onClick: ()
       )}
     >
       {post.link_imagem && (
-        <div className="relative mb-1.5 h-14 w-full overflow-hidden rounded">
-          <Image src={post.link_imagem} alt="" fill sizes="200px" className="object-cover" />
+        <div className="relative mb-1.5 aspect-square w-full overflow-hidden rounded bg-faxa-branco/60">
+          <Image src={post.link_imagem} alt="" fill sizes="170px" className="object-contain" />
         </div>
       )}
-      <div className="mb-0.5 flex items-center gap-1 font-bold">{post.titulo}</div>
+      <div className="mb-0.5 break-words font-bold">{post.titulo}</div>
       <div className={cn("text-[10px]", post.status === "Publicado" ? "text-faxa-cinza-claro/70" : "text-faxa-cinza-3")}>
         {post.tipo} · {post.formato}
       </div>
